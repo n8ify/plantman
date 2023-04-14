@@ -6,7 +6,7 @@ create table plant (
                        plnt_plant_type varchar(50) not null,
                        plnt_growth_day int not null,
                        plnt_tag varchar(50),
-                       plnt_available_to_plant boolean default false
+                       plnt_available_to_plant boolean not null default false
 );
 
 create table thread (

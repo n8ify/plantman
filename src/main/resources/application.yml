@@ -1,11 +1,13 @@
 
 # Spring configuration
+server:
+  port: ${SERVER_PORT:8080}
 spring:
   datasource:
     hikari:
-      jdbc-url: jdbc:postgresql://${APP_DATASOURCE_URL}:${APP_DATASOURCE_PORT}/${APP_DATASOURCE_DATABASE}
-      username: ${APP_DATASOURCE_USERNAME}
-      password: ${APP_DATASOURCE_PASSWORD}
+      jdbc-url: jdbc:postgresql://${DATASOURCE_URL}:${DATASOURCE_PORT}/${DATASOURCE_DATABASE}
+      username: ${DATASOURCE_USERNAME}
+      password: ${DATASOURCE_PASSWORD}
       driver-class-name: org.postgresql.Driver
   devtools:
     add-properties: false
@@ -21,4 +23,4 @@ logging:
 
 # General app configuration
 app:
-  mode: ${APP_MODE:DEVELOP}
+  mode: ${MODE:DEVELOP}

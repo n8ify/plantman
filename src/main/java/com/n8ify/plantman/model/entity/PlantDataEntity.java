@@ -1,5 +1,6 @@
 package com.n8ify.plantman.model.entity;
 
+import com.n8ify.plantman.enums.PlantType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,7 +12,7 @@ import lombok.*;
 @Builder
 @Entity
 @Table(name = "plant")
-public class PlantEntity {
+public class PlantDataEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "plnt_id")
@@ -20,8 +21,9 @@ public class PlantEntity {
     private String plntName;
     @Column(name = "plnt_remark", length = 255)
     private String plntRemark;
+    @Enumerated(EnumType.STRING)
     @Column(name = "plnt_plant_type", length = 50, nullable = false)
-    private String plntPlantType;
+    private PlantType plntPlantType;
     @Column(name = "plnt_growth_day", nullable = false)
     private Integer plntGrowthDay;
     @Column(name = "plnt_tag", length = 50)
